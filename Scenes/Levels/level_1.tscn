@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cl2510v54u56i"]
+
+[ext_resource type="Script" uid="uid://cfyvjij4qc7nn" path="res://Scripts/room_generation.gd" id="1_4dpyx"]
+[ext_resource type="PackedScene" uid="uid://tckdge0h8e5d" path="res://Scenes/player.tscn" id="1_tlcug"]
+[ext_resource type="PackedScene" uid="uid://b2yhhy412yx1e" path="res://Scenes/Projectiles/projectile.tscn" id="3_3mqfk"]
+[ext_resource type="Script" uid="uid://bn1r7dd06c7ei" path="res://Scripts/camera_controller.gd" id="3_iixi8"]
+
+[node name="Main" type="Node2D" unique_id=1880099597]
+
+[node name="RoomGeneration" type="Node" parent="." unique_id=1470399589 node_paths=PackedStringArray("player")]
+script = ExtResource("1_4dpyx")
+player = NodePath("../Player")
+
+[node name="Player" parent="." unique_id=1143408992 instance=ExtResource("1_tlcug")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=650999439]
+zoom = Vector2(4, 4)
+script = ExtResource("3_iixi8")
+
+[node name="Projectile" parent="." unique_id=244769450 instance=ExtResource("3_3mqfk")]
